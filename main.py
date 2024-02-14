@@ -179,7 +179,7 @@ async def accept(itr: ds.Interaction):
         uid1 = duel_details["uid1"]
         rating = duel_details["rating"]
 
-        contestId, index = get_duel_prob(uid1, uid2, rating)
+        contestId, index, prob_name = get_duel_prob(uid1, uid2, rating)
         duels_db.add_problem_and_time(
             itr.guild_id, itr.channel_id, uid1, contestId, index, int(time.time())
         )
